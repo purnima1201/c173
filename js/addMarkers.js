@@ -31,11 +31,12 @@ AFRAME.registerComponent("create-markers", {
         // Adding 3D model to scene
         var model = document.createElement("a-entity");
         model.setAttribute("id", `model-${dish.id}`);
-        model.setAttribute("position", dish.model_geometry.position);
-        model.setAttribute("rotation", dish.model_geometry.rotation);
-        model.setAttribute("scale", dish.model_geometry.scale);
+        model.setAttribute("position", dish.marker_geometry.position);
+        model.setAttribute("rotation", dish.marker_geometry.rotation);
+        model.setAttribute("scale", dish.marker_geometry.scale);
         model.setAttribute("gltf-model", `url(${dish.model_url})`);
         model.setAttribute("gesture-handler", {});
+        model.setAttribute("visible", false);
         marker.appendChild(model);
 
         // Ingredients Container
@@ -45,6 +46,7 @@ AFRAME.registerComponent("create-markers", {
         mainPlane.setAttribute("rotation", { x: -90, y: 0, z: 0 });
         mainPlane.setAttribute("width", 1.7);
         mainPlane.setAttribute("height", 1.5);
+        mainPlane.setAttribute("visible", false);
         marker.appendChild(mainPlane);
 
         // Dish title background plane
