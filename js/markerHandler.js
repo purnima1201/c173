@@ -94,7 +94,7 @@ AFRAME.registerComponent("markerhandler", {
       var payButton = document.getElementById("pay-button");
       
       // Handling Click Events
-      ratingButton.addEventListener("click", function() {
+      ratingButton.addEventListener("click",()=> {
         this.handleRatings(dish);
       });
 
